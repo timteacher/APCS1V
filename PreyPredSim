@@ -1,0 +1,57 @@
+package wasd;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+public class tester {
+	public static void main(String[] args) throws IOException, InterruptedException {
+	    InputStream input = System.in;
+	    double prey = 0;
+	    double pred = 0;
+	    double a = 0;
+	    double b = 0;
+	    double c = 0;
+	    double d = 0;
+	    
+	    Scanner x = new Scanner(System.in);
+	    	if(x.hasNextDouble()) {
+	    		 prey= x.nextDouble();
+		    	 pred= x.nextDouble();
+		    
+		    	 a= x.nextDouble();
+		    	 b= x.nextDouble();
+		    	 c= x.nextDouble();
+		    	 d= x.nextDouble();
+		    
+	    	}
+	    	else {
+	    		System.out.println("Rerun, not valid number");
+	    	}
+	    
+	    
+	    if (a<0 || b<0 || c<0 || d<0)
+	    {
+	    	System.out.println("Rerun, not valid number");
+	    }
+	    else {
+	    System.out.println("Q to quit");
+    	System.out.println("");
+
+	    while (true) {
+	    	prey = prey * (1+a-(b*pred));
+	    	pred = pred * (1-c+(d*prey));
+	    	System.out.printf("prey count: %.0f", prey);
+	    	System.out.printf("pred count: %.0f", pred);
+	    	System.out.println("");
+	        		
+	        		
+	        TimeUnit.SECONDS.sleep(1);
+
+	        if (input.available() > 0 && input.read() == 'q')
+	            break;
+	    }
+	}
+
+	}
+
+}
