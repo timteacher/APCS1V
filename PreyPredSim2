@@ -1,88 +1,13 @@
-package wasd;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-public class Tester {
-	public static void main(String[] args) throws IOException, InterruptedException {
-	    InputStream input = System.in;
-	    double prey = 0;
-	    double pred = 0;
-	    double a = 0;
-	    double b = 0;
-	    double c = 0;
-	    double d = 0;
-	    
-	    Scanner x = new Scanner(System.in);
-	    	if(x.hasNextDouble()) {
-	    		 prey= x.nextDouble();
-	    		 }
-	    	else {
-	    		System.out.println("Rerun, not valid number");
-	    		System.exit(1);}
-	    	if(x.hasNextDouble()) {
-	    		 pred= x.nextDouble();
-	    		 }
-	    	else {
-	    		System.out.println("Rerun, not valid number");
-	    		System.exit(1);}
-	    	if(x.hasNextDouble()) {
-	    		 a= x.nextDouble();
-	    		 }
-	    	else {
-	    		System.out.println("Rerun, not valid number");
-	    		System.exit(1);}
-	        if (x.hasNextDouble()) {
-	    		 b= x.nextDouble();
-	    		 }
-	        else {
-	    		System.out.println("Rerun, not valid number");
-	    		System.exit(1);}
-	        if (x.hasNextDouble()) {
-	    		 c= x.nextDouble();
-	    		 }
-	        else {
-	    		System.out.println("Rerun, not valid number");
-	    		System.exit(1);}
-	        if(x.hasNextDouble()) {
-	    		 d= x.nextDouble();
-	    		 }
-	        else {
-	    		System.out.println("Rerun, not valid number");
-	    		System.exit(1);}
-		    
-	    	
-	    	
-	    	
-	    
-	    
-	    if (prey<0||pred<0|| a<0 || b<0 || c<0 || d<0)
-	    {
-	    	System.out.println("Rerun, not valid number");
-	   
-	    }
-	    
-	
-	    else {
-	    	System.out.println("Q to quit");
-	    	System.out.println("");
+1
+2
+3
+4
+5
+6
+4
+Q to quit
 
-	    	while (true) {
-	    		prey = prey * (1+a-(b*pred));
-				pred = pred * (1-c+(d*prey));
-				System.out.printf("prey count: %.0f", prey);
-				System.out.printf("pred count: %.0f", pred);
-				System.out.println("");
-						
-						
-				TimeUnit.SECONDS.sleep(1);
-				
-				if (input.available() > 0 && input.read() == 'q')
-				            break;
-				    }
-				}
-				
-				}
-
-	
-}
+prey count: -4  pred count: -56
+prey count: -912  pred count: 306656
+prey count: 1118677440  pred count: 2058294893017216
+prey count: -9210272246742287000000000  pred count: -113744737972607100000000000000000000000000
